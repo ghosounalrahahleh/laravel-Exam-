@@ -48,7 +48,7 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="{{ asset('images/icon/logo.png') }}" alt="CoolAdmin" />
+                            <img src="{{ asset('img/logo2.png') }}" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -101,9 +101,9 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
 
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
+            <div class="logo text-center">
                 <a href="#">
-                    <img src="{{ asset('images/icon/logo.png') }}" alt="Cool Admin" />
+                    <img width="30%" src="{{ asset('img/logo2.png') }}" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
