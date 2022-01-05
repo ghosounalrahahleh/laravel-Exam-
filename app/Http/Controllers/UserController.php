@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Result;
 use App\Models\Exam;
-
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
        $exams   = Exam::all();
-       
+
        $results = Result::where('user_id',auth()->user()->id)->get();
 
        return view('public-site.userProfile',compact('results','exams'));
@@ -112,7 +112,7 @@ class UserController extends Controller
         User::create([
             "name"     => $request->name,
             "email"    => $request->email,
-            "password" => $request->password,
+            "password" => Hash::make($request->password),
             "role_id"  => $request->user_role,
         ]);
         return redirect()->back();
@@ -133,10 +133,10 @@ class UserController extends Controller
         $user           = User::find($id);
         $user->name     = $request->name;
         $user->email    = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->role_id  = $request->user_role;
         $user->update();
-        return redirect()->route('users.index');
+        return redirect()->route('user.index');
     }
 
     /*Delete User */
@@ -144,6 +144,6 @@ class UserController extends Controller
     {
         $user = User::find($request);
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('user.index');
     }
 }

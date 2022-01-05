@@ -43,7 +43,7 @@ Route::get('/admin/deleteusers/{id}', [UserController::class, "backenddestroy"])
 Route::post('/admin/updateusers/{id}', [UserController::class, "backendupdate"])->name('user.update');
 
 //Admin dashboard Roles CRUD
-Route::get('/admin/displayRoles', [RoleController::class, "backendindex"])->name('roles.index');
+Route::get('/admin/displayRoles', [RoleController::class, "backendindex"])->name('role.index');
 Route::post('/admin/addRoles', [RoleController::class, "backendstore"])->name('role.add');
 Route::get('/admin/editRoles/{id}', [RoleController::class, "backendedit"])->name('role.edit');
 Route::get('/admin/deleteRoles/{id}', [RoleController::class, "backenddestroy"])->name('role.delete');
@@ -57,21 +57,21 @@ Route::get('/admin/deleteCategories/{id}', [CategoryController::class, "backendd
 Route::post('/admin/updateCategories/{id}', [CategoryController::class, "backendupdate"])->name('category.update');
 
 //Admin dashboard exams CRUD
-Route::get('/admin/displayExams', [ExamController::class, "backendindex"])->name('exams.index');
+Route::get('/admin/displayExams', [ExamController::class, "backendindex"])->name('exam.index');
 Route::post('/admin/addExams', [ExamController::class, "backendstore"])->name('exam.add');
 Route::get('/admin/editExams/{id}', [ExamController::class, "backendedit"])->name('exam.edit');
 Route::get('/admin/deleteExams/{id}', [ExamController::class, "backenddestroy"])->name('exam.delete');
 Route::post('/admin/updateExams/{id}', [ExamController::class, "backendupdate"])->name('exam.update');
 
 //Admin dashboard Questions CRUD
-Route::get('/admin/displayQuestions', [QuestionController::class, "backendindex"])->name('questions.index');
+Route::get('/admin/displayQuestions', [QuestionController::class, "backendindex"])->name('question.index');
 Route::post('/admin/addQuestions', [QuestionController::class, "backendstore"])->name('question.add');
 Route::get('/admin/editQuestions/{id}', [QuestionController::class, "backendedit"])->name('question.edit');
 Route::get('/admin/deleteQuestions/{id}', [QuestionController::class, "backenddestroy"])->name('question.delete');
 Route::post('/admin/updateQuestions/{id}', [QuestionController::class, "backendupdate"])->name('question.update');
 
 //Admin dashboard Questions CRUD
-Route::get('/admin/displayAnswers', [AnswerController::class, "backendindex"])->name('answers.index');
+Route::get('/admin/displayAnswers', [AnswerController::class, "backendindex"])->name('answer.index');
 Route::post('/admin/addAnswers', [AnswerController::class, "backendstore"])->name('answer.add');
 Route::get('/admin/editAnswers/{id}', [AnswerController::class, "backendedit"])->name('answer.edit');
 Route::get('/admin/deleteAnswers/{id}', [AnswerController::class, "backenddestroy"])->name('answer.delete');
@@ -84,12 +84,7 @@ Route::get('/admin/editResults/{id}', [ResultController::class, "backendedit"])-
 Route::get('/admin/deleteResults/{id}', [ResultController::class, "backenddestroy"])->name('result.delete');
 Route::post('/admin/updateResults/{id}', [ResultController::class, "backendupdate"])->name('result.update');
 
-//Admin dashboard Roles CRUD
-Route::get('/admin/displayRoles', [RoleController::class, "backendindex"])->name('roles.index');
-Route::post('/admin/addRoles', [RoleController::class, "backendstore"])->name('role.add');
-Route::get('/admin/editRoles/{id}', [RoleController::class, "backendedit"])->name('role.edit');
-Route::get('/admin/deleteRoles/{id}', [RoleController::class, "backenddestroy"])->name('role.delete');
-Route::post('/admin/updateRoles/{id}', [RoleController::class, "backendupdate"])->name('role.update');
+
 
 //auth routs
 Auth::routes();

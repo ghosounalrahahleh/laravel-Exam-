@@ -90,7 +90,7 @@ class ResultController extends Controller
          //save in the provit table
          $user =  User::find(auth()->user()->id);
          $user->exams()->attach(session()->get('exam_id'));
-         
+
          return view('public-site.result', compact('mark', 'exam_score', 'uanswers','answers', 'questions','count'));
     }
 
@@ -181,13 +181,13 @@ class ResultController extends Controller
         $answer->correct     = $request->correct;
         $answer->question_id = $request->q_title;
         $answer->update();
-        return redirect()->route('answers.index');
+        return redirect()->route('answer.index');
     }
 
     public function backenddestroy($request)
     {
         $answer = Answer::find($request);
         $answer->delete();
-        return redirect()->route('answers.index');
+        return redirect()->route('answer.index');
     }
 }

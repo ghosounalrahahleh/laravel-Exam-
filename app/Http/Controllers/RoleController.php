@@ -119,7 +119,7 @@ class RoleController extends Controller
     {
         $role = Role::find($request);
         $role->delete();
-        return redirect()->route('roles.index');
+        return redirect()->route('role.index');
     }
 
     public function backendupdate(UpdateRoleRequest $request,  $id)
@@ -127,6 +127,6 @@ class RoleController extends Controller
         $role       = Role::find($id);
         $role->role = $request->role;
         $role->update();
-        return redirect()->route('roles.index');
+        return redirect()->route('role.index');
     }
 }

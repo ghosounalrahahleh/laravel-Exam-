@@ -66,7 +66,7 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li> --}}
                         <li>
-                            <a href="{{ route('roles.index') }}">
+                            <a href="{{ route('role.index') }}">
                                 <i class="fas fa-table"></i>Manage Roles</a>
                         </li>
                         <li>
@@ -78,21 +78,18 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
                                 <i class="fas fa-table"></i>Manage Categories</a>
                         </li>
                         <li>
-                            <a href=" {{ route('exams.index') }}">">
+                            <a href=" {{ route('exam.index') }}">">
                                 <i class="fas fa-table"></i>Manage Exam</a>
                         </li>
                         <li>
-                            <a href="{{ route('questions.index') }}">
+                            <a href="{{ route('question.index') }}">
                                 <i class="fas fa-table"></i>Manage Questions</a>
                         </li>
                         <li>
-                            <a href="{{ route('answers.index') }}">
+                            <a href="{{ route('answer.index') }}">
                                 <i class="fas fa-table"></i>Manage Answers</a>
                         </li>
-                        <li>
-                            <a href="{{ route('result.index') }}">
-                                <i class="fas fa-table"></i>Manage Result</a>
-                        </li>
+
 
                             </ul>
                         </li>
@@ -117,7 +114,7 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li> --}}
                         <li>
-                            <a href="{{ route('roles.index') }}">
+                            <a href="{{ route('role.index') }}">
                                 <i class="fas fa-table"></i>Manage Roles</a>
                         </li>
                         <li>
@@ -129,20 +126,16 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
                                 <i class="fas fa-table"></i>Manage Categories</a>
                         </li>
                         <li>
-                            <a href="{{ route('exams.index') }}">
+                            <a href="{{ route('exam.index') }}">
                                 <i class="fas fa-table"></i>Manage Exam</a>
                         </li>
                         <li>
-                            <a href="{{ route('questions.index') }}">
+                            <a href="{{ route('question.index') }}">
                                 <i class="fas fa-table"></i>Manage Questions</a>
                         </li>
                         <li>
-                            <a href="{{ route('answers.index') }}">
+                            <a href="{{ route('answer.index') }}">
                                 <i class="fas fa-table"></i>Manage Answers</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('result.index') }}">
-                                <i class="fas fa-table"></i>Manage Result</a>
                         </li>
 
                     </ul>
@@ -154,11 +147,11 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            <header class="header-desktop">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
+            <header class="header-desktop"
+>
 
-                    </div>
+                <div class="section__content section__content--p30">
+
                 </div>
             </header>
             <!-- HEADER DESKTOP-->

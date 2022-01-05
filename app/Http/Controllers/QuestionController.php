@@ -133,12 +133,12 @@ class QuestionController extends Controller
         $question->exam_id = $request->exam_title;
 
         $question->update();
-        return redirect()->route('questions.index');
+        return redirect()->route('question.index');
     }
     public function backenddestroy($request)
     {
         $question = Question::find($request);
         $question->delete();
-        return redirect()->route('questions.index');
+        return redirect()->route('question.index');
     }
 }

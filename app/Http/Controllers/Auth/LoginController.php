@@ -54,7 +54,7 @@ class LoginController extends Controller
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
             if (auth()->user()->role_id == 1) {
-                return Redirect()->route('categories.index');
+                return Redirect()->route('category.index');
             } else {
                 if (auth()->attempt(array(
                     'email' => $request->input('email'),
@@ -79,5 +79,5 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-   
+
 }

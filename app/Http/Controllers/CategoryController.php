@@ -131,7 +131,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($request);
         $category->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('category.index');
     }
 
     public function backendupdate(UpdateCategoryRequest $request,  $id)
@@ -147,6 +147,6 @@ class CategoryController extends Controller
 
 
         $category->update();
-        return redirect()->route('categories.index');
+        return redirect()->route('category.index');
     }
 }

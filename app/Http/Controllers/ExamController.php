@@ -131,14 +131,14 @@ class ExamController extends Controller
         $exam->title       = $request->title;
         $exam->category_id = $request->category_name;
         $exam->update();
-        return redirect()->route('exams.index');
+        return redirect()->route('exam.index');
     }
 
     public function backenddestroy($request)
     {
         $exam = Exam::find($request);
         $exam->delete();
-        return redirect()->route('exams.index');
+        return redirect()->route('exam.index');
     }
 
 
