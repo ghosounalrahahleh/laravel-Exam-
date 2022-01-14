@@ -16,7 +16,6 @@ class CreateResultsTable extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->integer('result');
-
             $table->foreignId('user_id')
                 ->unsigned()
                 ->references('id')

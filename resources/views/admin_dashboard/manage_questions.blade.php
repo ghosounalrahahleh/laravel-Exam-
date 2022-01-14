@@ -14,22 +14,128 @@
                                 action="@if($update === true){{ route('question.update',$question->id) }} @else {{ route('question.add') }} @endif"
                                 method="post">
                                 @csrf
-                                <!-- to add id throw url  -->
-                                <input type="hidden" name="q_id_hidden" value="">
-                                <!--  -->
-                                <div class="form-group">
-                                    <label for="cc-payment" class="control-label mb-1">Question Text</label>
-                                    <input id="cc-pament" name="text" type="text" class="form-control"
-                                        aria-required="true" aria-invalid="false"
-                                        value="@if($update === true){{$question->text}} @endif">
-                                </div>
-                                <div class="form-group">
-                                    <label for="cc-payment" class="control-label mb-1">Question Points</label>
-                                    <input id="cc-pament" name="points" type="number" class="form-control"
-                                        aria-required="true" aria-invalid="false" min="0"
-                                        value="@if( $update === true) {{   $question->points  }} @endif">
-                                </div>
 
+                                <!--  -->
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group ">
+                                            <label for="cc-payment" class="control-label mb-1">Question Text</label>
+                                            <input id="cc-pament" name="text" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false"
+                                                value="@if($update === true){{$question->text}} @endif">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Question Points</label>
+                                            <input id="cc-pament" name="points" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" min="0"
+                                                value="@if( $update === true) {{   $question->points  }} @endif">
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- first answer start--}}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group mb-4">
+                                            <input id="cc-pament" name="answer[]" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="first answer "
+                                                value="@if($update==true){{  $answers[0]['answer'] }} @endif">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <select class="form-select w-100 mb-4  p-2" name='correct[]' value="">
+                                                @if ($update===true)
+                                                <option class='w-100' value='{{ $answers[0]['id'] }}' selected>
+                                                    {{ $answers[0]['correct'] }}</option>
+                                                @else
+                                                <option class='w-100' value=''>Set the correct answer </option>
+                                                @endif
+                                                <option class='w-100' value='0'>0</option>
+                                                <option class='w-100' value='1'>1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- first answer end --}}
+
+                                {{-- second answer start--}}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group mb-4">
+                                            <input id="cc-pament" name="answer[]" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="second answer "
+                                                value="@if($update==true){{ $answers[1]['answer'] }} @endif">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <select class="form-select w-100 mb-4  p-2" name='correct[]' value="">
+                                                @if ($update===true)
+                                                <option class='w-100' value='{{ $answers[1]['id'] }}' selected>
+                                                    {{$answers[1]['correct'] }}</option>
+                                                @else
+                                                <option class='w-100' value=''>Set the correct answer </option>
+                                                @endif
+                                                <option class='w-100' value='0'>0</option>
+                                                <option class='w-100' value='1'>1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- second answer end --}}
+                                {{-- third answer start--}}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group mb-4">
+                                            <input id="cc-pament" name="answer[]" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="third answer "
+                                                value="@if($update==true){{ $answers[2]['answer']}} @endif">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <select class="form-select w-100 mb-4  p-2" name='correct[]' value="">
+                                                @if ($update===true)
+                                                <option class='w-100' value='{{ $answers[2]['id']}}' selected>
+                                                    {{ $answers[2]['correct'] }}</option>
+                                                @else
+                                                <option class='w-100' value=''>Set the correct answer </option>
+                                                @endif
+                                                <option class='w-100' value='0'>0</option>
+                                                <option class='w-100' value='1'>1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- third answer end --}}
+                                {{-- fourth answer start--}}
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group mb-4">
+                                            <input id="cc-pament" name="answer[]" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="fourth answer"
+                                                value="@if($update==true){{ $answers[3]['answer'] }} @endif">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <select class="form-select w-100 mb-4  p-2" name='correct[]' value="">
+                                                @if ($update===true)
+                                                <option class='w-100' value='{{ $answers[3]['id']}}' selected>
+                                                    {{ $answers[3]['correct'] }}</option>
+                                                @else
+                                                <option class='w-100' value=''>Set the correct answer </option>
+                                                @endif
+                                                <option class='w-100' value='0'>0</option>
+                                                <option class='w-100' value='1'>1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- fourth answer end --}}
                                 <div class="form-group">
                                     <select class="form-select w-100 mb-4  p-2" name='exam_title' value="">
                                         @if ($update===true)
@@ -123,6 +229,11 @@
 
 
                     <!-- END USER DATA-->
+                    {{-- pagination part --}}
+                    <div class="d-flex justify-content-center mt-3">
+                        {!! $questions->links() !!}
+                    </div>
+                    {{-- end pagination part --}}
                 </div>
 
             </div>

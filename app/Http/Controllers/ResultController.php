@@ -47,10 +47,11 @@ class ResultController extends Controller
         $exam_score = 0;
 
         foreach ($request->except('_token') as $key => $part) {
+           // dd($part);
             $correct = Answer::where('correct', 1)
                 ->where('question_id', $key)
                 ->get()->first();
-
+          //dd($correct);
             $exam_score += $correct->question->points;
 
             if ($part === $correct->answer) {
@@ -63,7 +64,6 @@ class ResultController extends Controller
             "result"  => $mark,
             "user_id" => auth()->user()->id,
             "exam_id" => session()->get('exam_id'),
-
         ]);
 
         //get the result id

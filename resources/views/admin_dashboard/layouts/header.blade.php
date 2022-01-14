@@ -133,10 +133,7 @@ $myslqi = new mysqli('localhost', 'root', '', 'exam') or die(mysqli_error($myslq
                             <a href="{{ route('question.index') }}">
                                 <i class="fas fa-table"></i>Manage Questions</a>
                         </li>
-                        <li>
-                            <a href="{{ route('answer.index') }}">
-                                <i class="fas fa-table"></i>Manage Answers</a>
-                        </li>
+                   
 
                     </ul>
                 </nav>

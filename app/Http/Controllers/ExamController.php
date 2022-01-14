@@ -48,7 +48,8 @@ class ExamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {$categories = Category::all();
+    {
+        $categories = Category::all();
         $exams = Exam::where('category_id',$id)->paginate(3);
         //dd($exams);
         return view('public-site.exams',compact('exams','categories'));

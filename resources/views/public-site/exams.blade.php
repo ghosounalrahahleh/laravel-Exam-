@@ -46,7 +46,7 @@
             {{-- End aside div --}}
 
             {{-- main content --}}
-            <div class="col-10 d-flex justify-content-start flex-wrap gap-5 m-auto">
+            <div class="col-10 d-flex justify-content-between flex-wrap ">
                 @foreach ($exams as $exam)
                 <div class="col-md-4 col-sm-8 mb-2  card-main" style="max-width: fit-content; overflow:hidden">
                     <div class="card" style="width: 18rem; ">

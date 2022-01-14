@@ -46,7 +46,7 @@
             {{-- End aside div --}}
 
             {{-- main content --}}
-            <div class="col-10 d-flex justify-content-start flex-wrap gap-5 m-auto">
+            <div class="col-10 d-flex justify-content-between flex-wrap ">
 
                 @if($exams->isNotEmpty())
                 @foreach ($exams as $exam)

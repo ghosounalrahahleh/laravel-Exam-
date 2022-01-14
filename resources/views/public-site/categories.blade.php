@@ -32,7 +32,7 @@
               </div>
               <div class="widgets_inner">
                 <ul class="list">
-                    @foreach  ($categories as $category)
+                    @foreach  ($categoriesAll as $category)
                     <li class="category-title">
                       <a href="{{  route('categories.show',$category->id) }}">
                         {{ $category->name }}</a>
@@ -46,9 +46,9 @@
         {{-- End aside div --}}
 
         {{-- main content --}}
-        <div class="col-10 d-flex justify-content-start flex-wrap gap-5 m-auto">
+        <div class="col-10 d-flex justify-content-between flex-wrap ">
             @foreach  ($categories as $category)
-            <div class="col-md-4 col-sm-8 mb-2 card-main" style="max-width: fit-content; overflow:hidden">
+            <div class="col-md-4 col-sm-8 m-0 card-main" style="max-width: fit-content; overflow:hidden">
               <div class="card" style="width: 18rem; ">
                   <img width="100%" height="200px" class="" src="{{  $category->image }}" alt="">
                   <div class="card-body">

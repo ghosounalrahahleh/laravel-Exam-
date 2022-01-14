@@ -86,55 +86,5 @@ class AnswerController extends Controller
     }
 
 
-    //Dashboard
-    public function backendindex()
-    {
-        $questions = Question::all();
-        $answers   = Answer::all();
-        $update     = false;
-        return view('admin_dashboard.manage_answers', compact('answers', 'questions', 'update'));
-    }
-    public function backendstore(StoreAnswerRequest $request)
-    {
-        $this->validate($request, [
-            'answer'  => 'required|max:250',
-            'correct' => 'required',
-            'q_title' => 'required',
-        ]);
-
-        Answer::create([
-            'answer'      => $request->answer,
-            'correct'     => $request->correct,
-            'question_id' => $request->q_title,
-        ]);
-
-        return redirect()->back();
-    }
-
-    public function backendedit($id)
-    {
-        $update    = true;
-        $questions = Question::all();
-        $answers   = Answer::all();
-        $answer    = Answer::find($id);
-
-        return view('admin_dashboard.manage_answers', compact('answers', 'questions', 'answer', 'update'));
-    }
-
-    public function backendupdate(UpdateAnswerRequest $request,  $id)
-    {
-        $answer              = Answer::find($id);
-        $answer->answer      = $request->answer;
-        $answer->correct     = $request->correct;
-        $answer->question_id = $request->q_title;
-        $answer->update();
-        return redirect()->route('answer.index');
-    }
-
-    public function backenddestroy($request)
-    {
-        $answer = Answer::find($request);
-        $answer->delete();
-        return redirect()->route('answer.index');
-    }
+    
 }

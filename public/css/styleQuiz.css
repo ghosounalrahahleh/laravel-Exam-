@@ -155,7 +155,9 @@ body {
     font-size: 25px;
     margin-top: 20px;
 }
-
+.page-link{
+    color: #4b257e !important;
+}
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;

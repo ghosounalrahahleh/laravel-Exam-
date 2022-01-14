@@ -18,9 +18,10 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::paginate(3);
+        $categoriesAll=Category::all();
         $exams      = Exam::all();
         session()->put('exam_id', '');
-        return view('public-site.categories', compact('categories', 'exams'));
+        return view('public-site.categories', compact('categories', 'exams','categoriesAll'));
     }
 
     /**

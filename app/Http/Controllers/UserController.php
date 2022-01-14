@@ -17,11 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-       $exams   = Exam::all();
-
-       $results = Result::where('user_id',auth()->user()->id)->get();
-
-       return view('public-site.userProfile',compact('results','exams'));
+       $results = Result::where('user_id',auth()->user()->id)->paginate(10);
+       return view('public-site.userProfile',compact('results'));
     }
 
     /**
